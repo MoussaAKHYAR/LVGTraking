@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}envoyer mail{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+            <div class="page-inner py-5">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                    <div>
+                        <h2 class="text-white pb-2 fw-bold">Envoyer de mail</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+    
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Form Elements</div>
+                    </div>
+                    <div class="card-body">
+                        <form class="row" action="{{ path('sendMail') }}" method="POST">
+
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="text" class="form-control" name="email" id="email" value="{% if users %}{{ users.email }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-4">
+                                <div class="form-group">
+                                    <label for="password">Password</label>
+                                    <input type="password" class="form-control" name="password" id="password" value="{% if users %}{{ users.password }}{% endif %}">
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button type="submit" name="send" class="btn btn-success">Envoyer</button>
+                                </div>
+                            </div>
+                        </form>    
+                        
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+{% endblock %}
+

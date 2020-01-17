@@ -1,0 +1,13 @@
+# config/packages/fos_user.yaml
+fos_user:
+    db_driver: orm # other valid values are 'mongodb' and 'couchdb'
+    firewall_name: main
+    user_class: App\Entity\User
+
+    registration:
+        form:
+            type: App\Form\RegistrationType
+            
+    from_email:
+        address: "moussa@lvgtracking.com"
+        sender_name: "moussa@lvgtracking.com"

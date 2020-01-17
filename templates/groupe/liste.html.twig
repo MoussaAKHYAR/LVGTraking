@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} liste Groupe{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+         <div class="page-inner py-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div>
+                    <h2 class="text-white pb-2 fw-bold">Liste des Groupes de vehicule</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Liste des groupes</div>
+        </div>
+			<div class="card-body">
+									
+                <table class="table table-head-bg-success">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Type</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for groupe in groupes %}
+                            <tr>
+                                <td>{{groupe.id}}</td>
+                                <td>{{groupe.type}}</td>
+                                <td>
+                                    <a href="{{ path('editGroupe', {id: groupe.id}) }}" class="btn btn-dark">Editer</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('deleteGroupe', {id: groupe.id}) }}" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+{% endblock %}
+

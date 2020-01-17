@@ -1,0 +1,51 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}editer user{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+        <div class="page-inner py-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div>
+                    <h2 class="text-white pb-2 fw-bold">Editer un utilisateur</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Form Elements</div>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form, {'attr': {'class': 'row'}})}}
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.username) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.nom) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.prenom) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.email) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.telephone) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">
+                                <div class="form-group">
+                                    <label for="roles">Roles</label>
+                                    <select name="roles" id="roles" class="form-control">
+                                        <option value="ROLE_PDG" {{ user.hasRole('ROLE_PDG') ? 'selected' : '' }}>PDG</option>
+                                        <option value="ROLE_TECHNIQUE" {{ user.hasRole('ROLE_TECHNIQUE') ? 'selected' : '' }}>TECHNIQUE</option>
+                                        <option value="ROLE_EXPLOITATION" {{ user.hasRole('ROLE_EXPLOITATION') ? 'selected' : '' }}>EXPLOITATION</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-12 form-group">
+                                <button class="btn btn-primary">Modifier</button>
+                            </div>
+                        {{ form_rest(form) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+

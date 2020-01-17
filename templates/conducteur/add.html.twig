@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajout conducteur{% endblock %}
+
+{% block content %}
+<div class="panel-header bg-primary-gradient">
+        <div class="page-inner py-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div>
+                    <h2 class="text-white pb-2 fw-bold">Ajouter Conducteur</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Form Elements</div>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form, {'attr': {'class': 'row'}})}}
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.nom) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.prenom) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.DateNaissance) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.tel) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.adresse) }}</div>
+                            <div class="col-md-5 form-group">
+                                <button class="btn btn-primary">Enregistrer</button>
+                                <button type="reset" class="btn btn-danger">Annuler</button>
+                            </div>
+                            
+                         {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+{% endblock %}
+

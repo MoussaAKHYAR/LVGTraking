@@ -1,0 +1,64 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} liste Vehicule{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+            <div class="page-inner py-5">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                    <div>
+                        <h2 class="text-white pb-2 fw-bold">Liste des Vehicules</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Liste des Vehicules</div>
+        </div>
+			<div class="card-body">
+									
+                <table class="table table-head-bg-success table-responsive">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Lieu de départ</th>
+                            <th scope="col">Destination</th>
+                            <th scope="col">Nombre de litre</th>
+                            <th scope="col">Latitude destination</th>
+                            <th scope="col">Longitude destination</th>
+                            <th scope="col">Nombre de point</th>
+                            <th scope="col">Point d'interet</th>
+                            <th scope="col">Conducteur</th>
+                            <th scope="col">Vehicule</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for fiche in fiches %}
+                            <tr>
+                                <td>{{fiche.id}}</td>
+                                <td>{{fiche.lieuDepart}}</td>
+                                <td>{{fiche.destination}}</td>
+                                <td>{{fiche.nombreLitre}}</td>
+                                <td>{{fiche.latitudedestination}}</td>
+                                <td>{{fiche.longitudeDestination}}</td>
+                                <td>{{fiche.nombrePoint}}</td>
+                                <td>{{fiche.pointDinteret.lieu}}</td>
+                                <td>{{fiche.vehicule.nom}}</td>
+                                <td>{{fiche.conducteur.nom}}</td>
+                                <td>
+                                    <a href="{{ path('editFiche', {id: fiche.id}) }}" class="btn btn-dark">Editer</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('deleteFiche', {id: fiche.id}) }}" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+{% endblock %}
+

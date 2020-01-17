@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} liste Vehicule{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+            <div class="page-inner py-5">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                    <div>
+                        <h2 class="text-white pb-2 fw-bold">Liste des Vehicules</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Liste des Vehicules</div>
+        </div>
+			<div class="card-body">
+									
+                <table class="table table-head-bg-success">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Nom</th>
+                            <th scope="col">Marque</th>
+                            <th scope="col">Immatriculation</th>
+                            <th scope="col">consommation/km</th>
+                            <th scope="col">carburant Actuel</th>
+                            <th scope="col">Groupe de vehicule</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for vehicule in vehicules %}
+                            <tr>
+                                <td>{{vehicule.id}}</td>
+                                <td>{{vehicule.nom}}</td>
+                                <td>{{vehicule.marque}}</td>
+                                <td>{{vehicule.immatriculation}}</td>
+                                <td>{{vehicule.consoKm}}</td>
+                                <td>{{vehicule.carburantActuel}}</td>
+                                <td>{{vehicule.groupe.type}}</td>
+                                <td>
+                                    <a href="{{ path('editVehicule', {id: vehicule.id}) }}" class="btn btn-dark">Editer</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('deleteVehicule', {id: vehicule.id}) }}" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+{% endblock %}
+

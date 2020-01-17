@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} liste Point D'interet{% endblock %}
+
+{% block content %}
+    <div class="panel-header bg-primary-gradient">
+            <div class="page-inner py-5">
+                <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                    <div>
+                        <h2 class="text-white pb-2 fw-bold">Liste des points d'interet</h2>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="card">
+        <div class="card-header">
+            <div class="card-title">Liste des points</div>
+        </div>
+			<div class="card-body">
+									
+                <table class="table table-head-bg-success">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Lieu</th>
+                            <th scope="col">Latitude</th>
+                            <th scope="col">Longitude</th>
+                            <th scope="col">Action</th>
+                            <th scope="col">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for point in points %}
+                            <tr>
+                                <td>{{point.id}}</td>
+                                <td>{{point.lieu}}</td>
+                                <td>{{point.latitude}}</td>
+                                <td>{{point.longitude}}</td>
+                                <td>
+                                    <a href="{{ path('editPointDinteret', {id: point.id}) }}" class="btn btn-dark">Editer</a>
+                                </td>
+                                <td>
+                                    <a href="{{ path('deletePointDinteret', {id: point.id}) }}" class="btn btn-danger">Supprimer</a>
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+			</div>
+		</div>
+{% endblock %}
+

@@ -1,0 +1,99 @@
+index:
+    path: /
+    controller: App\Controller\CoreController::index
+addPosition:
+    path: /addPosition
+    controller: App\Controller\PositionController::addPosition
+changePassword:
+    path: /changePassword
+    controller: App\Controller\UserController::changePassword
+resetPassword:
+    path: /resetPassword
+    controller: App\Controller\UserController::resetPassword
+sendMail:
+    path: /sendMail
+    controller: App\Controller\EmailController::sendMail
+listeUser:
+    path: /listeUser
+    controller: App\Controller\UserController::liste
+editUser:
+    path: /editUser/{id}
+    controller: App\Controller\UserController::edit
+findId:
+    path: /findId/{id}
+    controller: App\Controller\UserController::findId
+addGroupe:
+    path: /addGroupe
+    controller: App\Controller\GroupeController::add
+listeGroupe:
+    path: /listeGroupe
+    controller: App\Controller\GroupeController::liste
+editGroupe:
+    path: /editGroupe/{id}
+    controller: App\Controller\GroupeController::edit
+deleteGroupe:
+    path: /deleteGroupe/{id}
+    controller: App\Controller\GroupeController::delete
+addVehicule:
+    path: /addVehicule
+    controller: App\Controller\VehiculeController::add
+listeVehicule:
+    path: /listeVehicule
+    controller: App\Controller\VehiculeController::liste
+editVehicule:
+    path: /editVehicule/{id}
+    controller: App\Controller\VehiculeController::edit
+deleteVehicule:
+    path: /deleteVehicule/{id}
+    controller: App\Controller\VehiculeController::delete
+addConducteur:
+    path: /addConducteur
+    controller: App\Controller\ConducteurController::add
+listeConducteur:
+    path: /listeConducteur
+    controller: App\Controller\ConducteurController::liste
+editConducteur:
+    path: /editConducteur/{id}
+    controller: App\Controller\ConducteurController::edit
+deleteConducteur:
+    path: /deleteConducteur/{id}
+    controller: App\Controller\ConducteurController::delete       
+addEquipement:
+    path: /addEquipement
+    controller: App\Controller\EquipementController::add
+listeEquipement:
+    path: /listeEquipement
+    controller: App\Controller\EquipementController::liste
+editEquipement:
+    path: /editEquipement/{id}
+    controller: App\Controller\EquipementController::edit
+deleteEquipement:
+    path: /deleteEquipement/{id}
+    controller: App\Controller\EquipementController::delete
+addFiche:
+    path: /addFiche
+    controller: App\Controller\FicheDeSortieController::add
+listeFiche:
+    path: /listeFiche
+    controller: App\Controller\FicheDeSortieController::liste
+editFiche:
+    path: /editFiche/{id}
+    controller: App\Controller\FicheDeSortieController::edit
+deleteFiche:
+    path: /deleteFiche/{id}
+    controller: App\Controller\FicheDeSortieController::delete
+addPointDinteret:
+    path: /addPointDinteret
+    controller: App\Controller\PointDinteretController::add
+listePointDinteret:
+    path: /listePointDinteret
+    controller: App\Controller\PointDinteretController::liste
+editPointDinteret:
+    path: /editPointDinteret/{id}
+    controller: App\Controller\PointDinteretController::edit
+deletePointDinteret:
+    path: /deletePointDinteret/{id}
+    controller: App\Controller\PointDinteretController::delete
+    
+
+

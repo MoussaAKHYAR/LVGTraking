@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ajout vehicule{% endblock %}
+
+{% block content %}
+<div class="panel-header bg-primary-gradient">
+        <div class="page-inner py-5">
+            <div class="d-flex align-items-left align-items-md-center flex-column flex-md-row">
+                <div>
+                    <h2 class="text-white pb-2 fw-bold">Ajouter Vehicule</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-inner">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <div class="card-title">Form Elements</div>
+                    </div>
+                    <div class="card-body">
+                        {{ form_start(form, {'attr': {'class': 'row'}})}}
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.nom) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.marque) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.immatriculation) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.maintenance) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.consoKm) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.carburantActuel) }}</div>
+                            <div class="col-md-6 col-lg-4 form-group">{{ form_row(form.groupe) }}</div>
+                            <div class="col-md-12 form-group">
+                                <button class="btn btn-primary">Enregistrer</button>
+                                <button type="reset" class="btn btn-danger">Annuler</button>
+                            </div>
+                         {{ form_end(form) }}
+                    </div>
+                </div>
+            </div>
+		</div>
+    </div>
+{% endblock %}
+
